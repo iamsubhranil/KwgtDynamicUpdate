@@ -1,0 +1,8 @@
+# OutName PosX PosY DimW DimH SrcImageName
+crop_weather.png 62 144 958 502 ss1.png
+crop_music.png 62 690 958 784 ss1.png
+crop_date.png 62 1515 386 508 ss1.png
+crop_reddit.png 487 1515 246 234 ss1.png
+crop_yt.png 487 1791 246 234 ss1.png
+crop_gmail.png 774 1791 246 234 ss2.png
+crop_spotify.png 774 1515 246 234 ss1.png

@@ -1,0 +1,25 @@
+name: Publish
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: python crop_wallpaper.py 
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            crop_weather.png
+            crop_yt.png
+            crop_reddit.png
+            crop_music.png
+            crop_date.png
+            crop_gmail.png
+            crop_spotify.png
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
