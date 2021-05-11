@@ -4,5 +4,5 @@ music.png 62 690 958 784 ss1.png
 date.png 62 1515 386 508 ss1.png
 reddit.png 487 1515 246 234 ss1.png
 youtube.png 487 1791 246 234 ss1.png
-gmail.png 774 1791 246 234 ss2.png
+gmail.png 774 1791 246 234 ss1.png
 spotify.png 774 1515 246 234 ss1.png
