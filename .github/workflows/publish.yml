@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build
-        run: python crop_wallpaper.py 
+        run: pip install pillow && python crop_wallpaper.py 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
