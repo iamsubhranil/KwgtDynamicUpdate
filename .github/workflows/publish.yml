@@ -15,7 +15,6 @@ jobs:
         uses: mathieudutour/github-tag-action@v5.5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-        with:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
