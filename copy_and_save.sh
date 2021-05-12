@@ -1,9 +1,24 @@
-#!/bin/sh
+#!/bin/bash
 
-[ ! -d "~/storage/pictures" ] && echo "This script must be run in termux after running 'termux-setup-storage'!" && exit
-[ ! -d "~/storage/shared" ] && echo "This script must be run in termux after running 'termux-setup-storage'!" && exit
-[ ! -d "~/storage/pictures/Screenshots" ] && echo "This script requires the screenshot directory to be present!" && exit
-[ ! -d ".last_image" ] && touch .last_image
+if [ ! -d "~/storage/pictures" ];
+then
+    echo "This script must be run in termux after running 'termux-setup-storage'!"
+    exit
+fi
+if [ ! -d "~/storage/shared" ];
+then
+    echo "This script must be run in termux after running 'termux-setup-storage'!"
+    exit
+fi
+if [ ! -d "~/storage/pictures/Screenshots" ];
+then
+    echo "This script requires the screenshot directory to be present!"
+    exit
+fi
+if [ ! -d ".last_image" ];
+then 
+    touch .last_image
+fi
 new_image=`ls -dtr1 ~/storage/pictures/Screenshots/* | tail -1`
 cmp "$new_image" .last_image
 if [[ $? = 0 ]]

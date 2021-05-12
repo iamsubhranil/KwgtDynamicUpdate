@@ -1,8 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
-[ ! -d "~/storage/pictures" ] && echo "This script must be run in termux after running 'termux-setup-storage'!" && exit
-[ ! -d ".username" ] && echo "Enter your GitHub username (cached locally): " && read uname && echo $uname > .username
-[ ! -d ".token" ] && echo "Enter your GitHub token (cached locally): " && read tkn && echo $tkn > .token
+if [ ! -d "~/storage/pictures/Screenshots/" ];
+then
+    echo "This script must be run in termux after running 'termux-setup-storage'!"
+    exit
+fi
+if [ ! -d ".username" ];
+then
+    echo "Enter your GitHub username (cached locally): "
+    read uname
+    echo $uname > .username
+fi
+if [ ! -d ".token" ];
+then
+    echo "Enter your GitHub token (cached locally): "
+    read tkn
+    echo $tkn > .token
+fi
 new_image=`ls -dtr1 ~/storage/pictures/Screenshots/* | tail -1`
 cmp "$new_image" ss1.png
 if [[ $? = 0 ]]
