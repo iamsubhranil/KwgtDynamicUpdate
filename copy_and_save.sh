@@ -1,16 +1,16 @@
 #!/bin/bash
 
-if [ ! -e "~/storage/pictures" ];
+if [ ! -e "$HOME/storage/pictures" ];
 then
     echo "This script must be run in termux after running 'termux-setup-storage'!"
     exit
 fi
-if [ ! -e "~/storage/shared" ];
+if [ ! -e "$HOME/storage/shared" ];
 then
     echo "This script must be run in termux after running 'termux-setup-storage'!"
     exit
 fi
-if [ ! -e "~/storage/pictures/Screenshots" ];
+if [ ! -e "$HOME/storage/pictures/Screenshots" ];
 then
     echo "This script requires the screenshot directory to be present!"
     exit
@@ -19,7 +19,7 @@ if [ ! -f ".last_image" ];
 then 
     touch .last_image
 fi
-new_image=`ls -dtr1 ~/storage/pictures/Screenshots/* | tail -1`
+new_image=`ls -dtr1 $HOME/storage/pictures/Screenshots/* | tail -1`
 cmp "$new_image" .last_image
 if [[ $? = 0 ]]
 then
@@ -30,7 +30,7 @@ mv ss1.png local_ss1.png
 cp -p "$new_image" ss1.png
 cp ss1.png .last_image
 python crop_wallpaper.py $1
-FOLDER=~/storage/shared/Kustom/BlurBacks
+FOLDER=$HOME/storage/shared/Kustom/BlurBacks
 mkdir -p $FOLDER
 mv date.png $FOLDER
 mv music.png $FOLDER

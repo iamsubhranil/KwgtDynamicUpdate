@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -e "~/storage/pictures/Screenshots/" ];
+if [ ! -e "$HOME/storage/pictures/Screenshots/" ];
 then
     echo "This script must be run in termux after running 'termux-setup-storage'!"
     exit
@@ -17,7 +17,7 @@ then
     read tkn
     echo $tkn > .token
 fi
-new_image=`ls -dtr1 ~/storage/pictures/Screenshots/* | tail -1`
+new_image=`ls -dtr1 $HOME/storage/pictures/Screenshots/* | tail -1`
 cmp "$new_image" ss1.png
 if [[ $? = 0 ]]
 then
