@@ -1,21 +1,21 @@
 #!/bin/bash
 
-if [ ! -d "~/storage/pictures" ];
+if [ ! -e "~/storage/pictures" ];
 then
     echo "This script must be run in termux after running 'termux-setup-storage'!"
     exit
 fi
-if [ ! -d "~/storage/shared" ];
+if [ ! -e "~/storage/shared" ];
 then
     echo "This script must be run in termux after running 'termux-setup-storage'!"
     exit
 fi
-if [ ! -d "~/storage/pictures/Screenshots" ];
+if [ ! -e "~/storage/pictures/Screenshots" ];
 then
     echo "This script requires the screenshot directory to be present!"
     exit
 fi
-if [ ! -d ".last_image" ];
+if [ ! -f ".last_image" ];
 then 
     touch .last_image
 fi

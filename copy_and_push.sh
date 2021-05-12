@@ -1,17 +1,17 @@
 #!/bin/bash
 
-if [ ! -d "~/storage/pictures/Screenshots/" ];
+if [ ! -e "~/storage/pictures/Screenshots/" ];
 then
     echo "This script must be run in termux after running 'termux-setup-storage'!"
     exit
 fi
-if [ ! -d ".username" ];
+if [ ! -f ".username" ];
 then
     echo "Enter your GitHub username (cached locally): "
     read uname
     echo $uname > .username
 fi
-if [ ! -d ".token" ];
+if [ ! -f ".token" ];
 then
     echo "Enter your GitHub token (cached locally): "
     read tkn
