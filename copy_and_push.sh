@@ -8,6 +8,7 @@ cmp "$new_image" ss1.png
 if [[ $? = 0 ]]
 then
     echo "Image not changed! Exiting.."
+    exit
 fi
 cp -p "$new_image" ss1.png
 git add ss1.png
